@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@currency-exchange/core": ["libs/core/src/index.ts"],
+      "@currency-exchange/currency-selector": [
+        "libs/currency-selector/src/index.ts"
+      ],
+      "@currency-exchange/store": ["libs/store/src/index.ts"],
+      "@currency-exchange/ui": ["libs/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

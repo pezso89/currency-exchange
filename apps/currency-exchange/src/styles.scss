@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --main-color: hsla(214, 62%, 21%, 1);
+  --main-box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --secondary-color: hsla(162, 47%, 50%, 1);
+  --main-error: #b71c1c;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  line-height: 1.5;
+  tab-size: 4;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+h1,
+h2,
+p,
+pre {
+  margin: 0;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
+}
+h1,
+h2 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+label,
+input,
+select,
+textarea {
+  display: block;
+}
+
+label,
+legend {
+  font-weight: 200;
+  margin-bottom: 16px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+.form-error {
+  padding: 5px 0;
+  color: var(--main-error);
+  display: block;
+}

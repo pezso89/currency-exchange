@@ -1,0 +1,20 @@
+.button {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 0.75rem;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+
+  &__primary {
+    color: var(--secondary-color);
+    box-shadow: var(--main-box-shadow);
+    background: var(--white);
+    border: 1px solid var(--secondary-color);
+
+    &--disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+}

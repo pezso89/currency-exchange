@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="container__welcome">
+    <div class="text-container">
+      <h2>
+        <span>Welcome to the Currency Exchange App</span>
+      </h2>
+    </div>
+  </div>
+  <div class="container__middle-section">
+    <ui-card>
+      <form [formGroup]="currencySelectorForm" (submit)="onSubmit()">
+        <ui-input
+          label="Amount"
+          inputType="number"
+          [inputId]="'from-amount'"
+          [inputControlName]="'amount'"
+          [parentForm]="currencySelectorForm"
+        ></ui-input>
+        <ui-select
+          label="From"
+          placeholder="Choose currency"
+          inputType="number"
+          [selectId]="'from-symbol'"
+          [inputControlName]="'fromSymbol'"
+          [parentForm]="currencySelectorForm"
+          [options]="(currencySymbols$ | async)!"
+        ></ui-select>
+        <ui-select
+          label="To"
+          placeholder="Choose currency"
+          [selectId]="'to-symbol'"
+          [inputControlName]="'toSymbol'"
+          [parentForm]="currencySelectorForm"
+          [options]="(currencySymbols$ | async)!"
+        ></ui-select>
+        <ui-button
+          buttonType="submit"
+          label="exchange"
+          [isDisabled]="currencySelectorForm.invalid"
+        ></ui-button>
+      </form>
+    </ui-card>
+    <ui-card
+      >@if ( exchangeRate$ | async; as exchangeRate ) {
+      <div class="container__exchange-rate">
+        <h2 class="container__exchange-rate-title">Exchange Rates</h2>
+        <div class="container__date">
+          {{ exchangeRate.timestamp * 1000 | date : 'YYYY-MM-dd' }}
+        </div>
+        <div class="container__result">
+          From: {{ exchangeRate.amount }} {{ exchangeRate.from }}
+        </div>
+        <div class="container__result">
+          To: {{ exchangeRate.result }} {{ exchangeRate.to }}
+        </div>
+      </div>
+      } @else {
+      <div class="container__empty">
+        <h2>
+          Plase fill the exchange rate form first to see the exchange rates!
+        </h2>
+      </div>
+      }
+    </ui-card>
+  </div>
+</div>

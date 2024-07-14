@@ -1,0 +1,28 @@
+<div class="form-field" [formGroup]="parentForm">
+  <label
+    [for]="inputId"
+    class="form-field__label"
+    [ngClass]="{
+      'form-field__label--error':
+        parentForm.get(inputControlName)?.errors && isDirtyOrTouched
+    }"
+    >{{ label }}
+    <input
+      [id]="inputId"
+      [type]="inputType"
+      [formControlName]="inputControlName"
+      class="form-field__input"
+      [ngClass]="{
+        'form-field__input--error':
+          parentForm.get(inputControlName)?.errors && isDirtyOrTouched
+      }"
+    />
+    @if(parentForm.get(inputControlName)?.hasError('required') &&
+    isDirtyOrTouched) {
+    <small class="form-error">The field is required</small>
+    } @if(parentForm.get(inputControlName)?.hasError('notPositiveNumber') &&
+    isDirtyOrTouched) {
+    <small class="form-error">Only positive numbers allowed!</small>
+    }
+  </label>
+</div>

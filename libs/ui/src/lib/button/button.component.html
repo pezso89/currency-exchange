@@ -1,0 +1,9 @@
+<button
+  class="button button__primary"
+  [ngClass]="{ 'button__primary--disabled': isDisabled }"
+  [type]="buttonType"
+  (click)="buttonClicked.emit()"
+  [disabled]="isDisabled"
+>
+  {{ label }}
+</button>

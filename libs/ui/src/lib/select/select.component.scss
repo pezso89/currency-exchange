@@ -1,0 +1,15 @@
+.form-field {
+  &__select {
+    border: 1px solid var(--secondary-color);
+    color: var(--main-color);
+    &--error {
+      border-color: var(--main-error);
+    }
+  }
+  &__label {
+    color: var(--secondary-color);
+    &--error {
+      color: var(--main-error);
+    }
+  }
+}
